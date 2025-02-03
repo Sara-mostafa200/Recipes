@@ -40,11 +40,8 @@ export default function Details() {
 
   
 
-return <>{  details.length <= 0 ?  
-   <div className='container px-1 flex flex-column justify-between items-center text-center'><h1 className='pt-10 text-50'>Invalid ID</h1>
-   <span className='text-textGray bg-black p-2 text-20'>Please enter the correct ID to get the recipe</span>
-   </div> 
-   : <div className='container p-1  text-center'>
+return <>{  details.length > 0 ?  
+  <div className='container p-1  text-center'>
    { details.map((item)=> <h1 className='text-black '>{item.strMeal}</h1>)}
     {
     // justify-between  items-center flex gap-1
@@ -78,6 +75,9 @@ return <>{  details.length <= 0 ?
         </div>)
     }
   </div>
+   :  <div className='container px-1 flex flex-column justify-between items-center text-center'><h1 className='pt-10 text-50'>Invalid ID</h1>
+   <span className='text-textGray bg-black p-2 text-20'>Please enter the correct ID to get the recipe</span>
+   </div> 
  }
 
 </>
