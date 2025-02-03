@@ -40,7 +40,7 @@ export default function Details() {
 
   
 
-return <>{  details.length > 0 ?  
+return <>{  details.length >= 0 ?  
   <div className='container p-1  text-center'>
    { details.map((item)=> <h1 className='text-black '>{item.strMeal}</h1>)}
     {
