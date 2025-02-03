@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createHashRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Layout from "./Components/Layout/Layout";
@@ -6,7 +6,7 @@ import Home from "./Components/Home/Home";
 import Details from './Components/RecipeDetails/Details';
 import Notfound from "./Components/Notfound/Notfound";
 
-let router = createBrowserRouter([
+let router = createHashRouter([
   { path: "", element: <Layout />, children: [
     {index:true , element:<Home/>},
     {path:'details/:id' , element:<Details/>},
