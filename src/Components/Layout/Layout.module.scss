@@ -1,0 +1,16 @@
+@mixin responsive($size) {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+
+.padding{
+    
+    padding: 10px;
+    @include responsive(700px ) {
+        padding: 2rem;
+      }
+    @include responsive(980px ) {
+        padding: 1rem;
+      }
+}

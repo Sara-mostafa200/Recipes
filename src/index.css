@@ -1,0 +1,40 @@
+
+@import "./../node_modules/@fontsource/pacifico/400.css";
+@import "./../node_modules/@fontsource/poppins/400.css";
+
+@import "./../node_modules/@fontsource/montserrat/500.css";
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+ position: relative;
+  min-height: 100vh;
+  font-family: "Montserrat" ;
+}
+
+
+.ml-small{
+  margin-left: 5px;
+}
+
+h1{
+  font-family: "Pacifico";
+  margin: 0;
+}
+
+h3{
+  font-family: "Poppins";
+
+  font-weight: 900;
+}
+
+h2{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,233 @@
+$colors : (
+ "yellow" : #ffa31b,
+ "black": #222222,
+ "textGray":#898987,
+ "backGray":#f7f7f7,
+ "white":white,
+);
+
+.fixed{
+    position: fixed;
+}
+
+.circle{
+    border-radius: 50% !important;
+}
+
+.smoothe{
+    transition: all 0.5s !important;
+}
+
+.shadow{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.082);
+}
+
+.h-screen{
+    min-height: 100vh;
+}
+
+.full{
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.container{
+   @extend .mx-auto;
+   width: 90%;
+}
+
+.w-screen{
+    width: 100vh;
+}
+
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.my-auto{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.text-center{
+    text-align: center;
+}
+.text-start{
+    text-align: start;
+}
+
+
+
+.block{
+    display: block;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-row{
+    flex-direction: row;
+    
+}
+
+.justify-center{ 
+ justify-content: center;
+}
+
+.justify-between{ 
+ justify-content: space-between;
+}
+
+
+
+.items-center{
+align-items: center;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.relative{
+
+    position: relative;
+}
+.absolute{
+
+    position: absolute;
+}
+
+@each $key,$value in $colors{
+ 
+    .bg-#{$key}{
+    background-color:$value;
+  }
+
+  .border-#{$key}{
+    border: 1px solid $value;
+  }
+
+  .text-#{$key}{
+   color: $value;
+  }
+
+  .btn-#{$key}{
+    background-color:  $value ;
+    padding: 10px 50px;
+    border-radius: 20px;
+    border: 0px;
+    border: 1px solid transparent ;
+
+  }
+
+  .btn-#{$key}:hover{
+    background: transparent;
+    border: 1px solid $value ;
+    color:  $value ;
+   }
+
+}
+
+
+@for $i from 0 to 50 {
+    .m-#{$i}{
+    margin: #{$i}#{rem};
+     
+    }
+    .my-#{$i}{
+    margin-top: #{$i}#{rem};
+    margin-bottom: #{$i}#{rem};
+     
+    }
+    .mx-#{$i}{
+    margin-left: #{$i}#{rem};
+    margin-right: #{$i}#{rem};
+     
+    }
+    .ml-#{$i}{
+        margin-left:  #{$i}#{rem} ;
+    }
+    .mr-#{$i}{
+        margin-right:  #{$i}#{rem} ;
+    }
+    .mt-#{$i}{
+        margin-top:  #{$i}#{rem} ;
+    }
+    .mb-#{$i}{
+        margin-bottom:  #{$i}#{rem} ;
+    }
+
+    .p-#{$i}{
+        padding: #{$i}#{rem};
+         
+        }
+        .py-#{$i}{
+        padding-top: #{$i}#{rem};
+        padding-bottom: #{$i}#{rem};
+         
+        }
+        .pb-#{$i}{
+        padding-bottom: #{$i}#{rem};
+         
+        }
+        .pt-#{$i}{
+        padding-top: #{$i}#{rem};
+         
+        }
+        .px-#{$i}{
+            padding-left: #{$i}#{rem};
+            padding-right: #{$i}#{rem};
+         
+        }
+
+
+}
+
+
+@for $i from 0 through 101 {
+    .w-#{$i} {
+      width: #{$i}#{"%"};
+    }
+    .h-#{$i} {
+      height: #{$i}#{"%"};
+    }
+
+    .text-#{$i}{
+        font-size: #{$i}#{"px"} ;
+    }
+  }
+
+
+  @for $i from 0 through 100 {
+    .rounded-#{$i} {
+      border-radius: #{$i}#{"px"} ;
+    }
+  }
+  @for $i from 0 through 10 {
+    .gap-#{$i} {
+      gap:  #{$i}#{"rem"} ;
+    }
+    .gapy-#{$i} {
+      column-gap: #{$i}#{"rem"} ;
+    }
+   
+  }
+
+
+

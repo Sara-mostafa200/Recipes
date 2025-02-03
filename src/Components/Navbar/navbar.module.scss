@@ -1,0 +1,77 @@
+@mixin responsive($size) {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+
+  .nav{
+    position: absolute;
+    @include responsive(700px ) {
+      position: relative;
+      width: 32%;
+    }
+    @include responsive(1200px) {
+      position: relative;
+      width: 20%;
+    }
+  }
+  .navFixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    @include responsive(700px ) {
+      
+      width: 32%;
+    }
+    @include responsive(1200px) {
+     
+      width: 20%;
+    }
+  }
+
+  .smallShow{
+    @include responsive(576px ) {
+        display: block !important;
+      }
+      @include responsive(700px ) {
+        display: none !important;
+      }
+      
+  }
+  .lgShow{
+    
+        display: none !important;
+      
+      @include responsive(700px ) {
+        display: block !important;
+      }
+  }
+
+  .navPosition{
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0px;
+    z-index: 20;
+    // padding: 5px;
+
+  }
+
+  .lightBoxContainer{
+    position: fixed ;
+    top: 0 ;
+    bottom: 0 ;
+    left: 0 ;
+    right: 0 ;
+    background-color: rgba(0, 0, 0, 0.418);
+  }
+
+  .title{
+    max-width: 200px;
+    font-size: 30px;
+    font-weight: 600 !important;
+  }
+
+
+ 
