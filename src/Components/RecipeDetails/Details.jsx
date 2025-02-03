@@ -16,15 +16,21 @@ export default function Details() {
   function GetDetails(id){
    axios.get(`https:/www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
    .then((res)=>{;
-    console.log(res);
+    
     if(res.data.meals == "Invalid ID" ){
-      setdetails([])       
+      setdetails([])  
+      console.log("one");
+           
     }else{
       setdetails(res.data.meals) 
+      console.log("two");
+           
     }
 
    }).catch((res)=>{
     setdetails([])
+    console.log("three");
+           
    }
    )
   }
@@ -33,7 +39,7 @@ export default function Details() {
 
   useEffect( ()=>{
      GetDetails(id)
-    console.log(details);
+    console.log("first");
     
 
   },[id])
@@ -42,7 +48,7 @@ export default function Details() {
 
 return <>
   <div className='container p-1  text-center'>
-   { details.map((item)=> <h1 className='text-black '>{item.strMeal}</h1>)}
+   { details?.map((item)=> <h1 className='text-black '>{item.strMeal}</h1>)}
     {
     // justify-between  items-center flex gap-1
       details?.map((item)=><div> <div className={`text-black ${style.grid}  `}>
