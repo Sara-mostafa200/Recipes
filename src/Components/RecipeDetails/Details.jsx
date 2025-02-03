@@ -14,7 +14,7 @@ export default function Details() {
   console.log(id);
 
   function GetDetails(id){
-   axios.get(`https:/www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+   axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
    .then((res)=>{;
     
     if(res.data.meals == "Invalid ID" ){
