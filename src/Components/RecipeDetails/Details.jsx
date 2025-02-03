@@ -19,17 +19,17 @@ export default function Details() {
     
     if(res.data.meals == "Invalid ID" ){
       setdetails([])  
-      console.log("one");
+     
            
     }else{
       setdetails(res.data.meals) 
-      console.log("two");
+      
            
     }
 
    }).catch((res)=>{
     setdetails([])
-    console.log("three");
+    
            
    }
    )
@@ -39,7 +39,7 @@ export default function Details() {
 
   useEffect( ()=>{
      GetDetails(id)
-    console.log("first");
+    
     
 
   },[id])
@@ -47,7 +47,9 @@ export default function Details() {
   
 
 return <>
-  <div className='container p-1  text-center'>
+{details.length >0  ?
+
+<div className='container p-1  text-center'>
    { details?.map((item)=> <h1 className='text-black '>{item.strMeal}</h1>)}
     {
     // justify-between  items-center flex gap-1
@@ -80,7 +82,10 @@ return <>
         </div>
         </div>)
     }
-  </div>
+  </div>: <div className='container px-1 flex flex-column justify-between items-center text-center'><h1 className='pt-10 text-50'>Invalid ID</h1>
+<span className='text-textGray bg-black p-2 text-20'>Please enter the correct ID to get the recipe</span>
+</div>  }
+  
  
  
 
@@ -91,6 +96,4 @@ return <>
 
 
 
-//    :  <div className='container px-1 flex flex-column justify-between items-center text-center'><h1 className='pt-10 text-50'>Invalid ID</h1>
-// <span className='text-textGray bg-black p-2 text-20'>Please enter the correct ID to get the recipe</span>
-// </div> 
+    
